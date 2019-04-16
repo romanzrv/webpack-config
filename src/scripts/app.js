@@ -1,5 +1,6 @@
 import * as helperModule from './my-helper-module';
 import * as _ from 'lodash';
+import './sharedModule';
 
 console.log('Welcome! Greetings from app.js');
 console.log(helperModule.greetings);

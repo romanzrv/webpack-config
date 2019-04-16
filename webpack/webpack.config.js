@@ -9,6 +9,13 @@ module.exports = {
         filename: "./[name].bundle.js"
     },
     watch: true,
+    optimization: {
+        splitChunks: {
+            chunks: "all",
+            minChunks: 1,
+            name: true
+        }
+    },
     plugins: [
         new htmlWebpackPlugin({
             hash: true,
