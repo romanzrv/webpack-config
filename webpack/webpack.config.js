@@ -1,4 +1,5 @@
 var htmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
     entry: {
@@ -15,6 +16,10 @@ module.exports = {
             minChunks: 1,
             name: true
         }
+    },
+    devServer: {
+        contentBase: path.join(__dirname, "../dist/"),
+        port: 9000
     },
     plugins: [
         new htmlWebpackPlugin({
