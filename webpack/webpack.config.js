@@ -1,5 +1,6 @@
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var extractTextPlugin = require('extract-text-webpack-plugin');
+var copyWebpackPlugin = require('copy-webpack-plugin');
 
 var path = require('path');
 
@@ -44,7 +45,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new extractTextPlugin({filename:'app.bundle.css'}),
+        new extractTextPlugin({filename: 'app.bundle.css'}),
+        new copyWebpackPlugin([
+            {from: 'src/images', to: 'images'}
+        ]),
         new htmlWebpackPlugin({
             hash: true,
             title: 'My Awesome application',

@@ -3,14 +3,6 @@ import * as _ from 'lodash';
 import './sharedModule';
 import './../styles/app.css';
 import './../styles/appStyles.scss';
-import homeIcon from '../images/home.png';
-import natureImg from '../images/nature.jpg';
-
-var homeImg = document.getElementById('home');
-homeImg.src = homeIcon;
-
-var frontImg = document.getElementById('frontImg');
-frontImg.src = natureImg;
 
 console.log('Welcome! Greetings from app.js');
 console.log(helperModule.greetings);
