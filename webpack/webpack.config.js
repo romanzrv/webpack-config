@@ -9,7 +9,6 @@ module.exports = {
     output: {
         filename: "./[name].bundle.js"
     },
-    watch: true,
     optimization: {
         splitChunks: {
             chunks: "all",
@@ -20,6 +19,14 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, "../dist/"),
         port: 9000
+    },
+    module: {
+        rules: [
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
+            }
+        ]
     },
     plugins: [
         new htmlWebpackPlugin({
