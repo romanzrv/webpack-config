@@ -1,4 +1,6 @@
 var htmlWebpackPlugin = require('html-webpack-plugin');
+var extractTextPlugin = require('extract-text-webpack-plugin');
+
 var path = require('path');
 
 module.exports = {
@@ -24,11 +26,15 @@ module.exports = {
         rules: [
             {
                 test: /\.(s*)css$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: extractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader'],
+                })
             }
         ]
     },
     plugins: [
+        new extractTextPlugin({filename:'app.bundle.css'}),
         new htmlWebpackPlugin({
             hash: true,
             title: 'My Awesome application',
