@@ -3,6 +3,10 @@ import * as _ from 'lodash';
 import './sharedModule';
 import './../styles/app.css';
 import './../styles/appStyles.scss';
+import homeIcon from '../images/home.png';
+
+var homeImg = document.getElementById('home');
+homeImg.src = homeIcon;
 
 console.log('Welcome! Greetings from app.js');
 console.log(helperModule.greetings);
